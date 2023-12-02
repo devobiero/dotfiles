@@ -1,3 +1,7 @@
 #!/bin/zsh
 
-ln -sf "$HOME"/dotfiles/iterm2/com.googlecode.iterm2.plist "$HOME"/Library/Preferences/com.googlecode.iterm2.plist
+echo "Updating iterm2 settings"
+
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$PWD/iterm2"
+defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
