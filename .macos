@@ -176,7 +176,7 @@ echo "Updating Locale settings"
 ###############################################################################
 
 	# Use English and Russian languagues, in this particular order
-	defaults write NSGlobalDomain AppleLanguages -array en-US zh-Hant
+	defaults write NSGlobalDomain AppleLanguages -array en-US
 
 	# Use 24-hour time format
 	defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
