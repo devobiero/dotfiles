@@ -1,0 +1,99 @@
+#!/bin/zsh
+
+install_or_update_homebrew () {
+  # Check for Homebrew and install if we don't have it
+  if test ! $(which brew); then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Add homebrew to PATH
+    echo 'eval "$(/usr/local/bin/brew shellenv)"' >> $HOME/.zprofile
+    eval "$(/usr/local/bin/brew shellenv)"
+  else
+    # Update Homebrew recipes
+    brew update
+  fi
+}
+
+install_brewfile () {
+  # Install all our dependencies with bundle (See Brewfile)
+  brew tap homebrew/bundle
+  echo "› brew bundle"
+  brew bundle
+}
+
+install_oh_my_zsh () {
+  # Install oh-my-zsh
+  export ZSH="$HOME/.oh-my-zsh"
+
+  if [ ! -d $ZSH ]; then
+    echo "Installing oh-my-zsh"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  fi
+}
+
+install_oh_my_zsh_plugins () {
+  export ZSH_CUSTOM="$ZSH/custom"
+  # Install zsh-autosuggestions
+  if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+  fi
+}
+
+setup_neovim () {
+  # Create init.vim
+  if [ ! -e ~/.config/nvim/init.vim ]; then
+      echo "Creating init.vim"
+      mkdir -p ~/.config/nvim
+      touch ~/.config/nvim/init.vim
+  fi
+
+
+  # Install vim-plug
+  if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
+    echo "Installing vim-plug..."
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  fi
+}
+
+# Set up git
+prompt_for_git_config () {
+    option=$1
+    prompt="$2"
+
+    if [[ ! `git config --global $option` ]]; then
+        read -p "$prompt: " item
+        git config --global $option "$item"
+    fi
+}
+
+configure_git () {
+    if [ ! -f .gitconfig ]; then
+      echo "Configuring git..."
+      prompt_for_git_config user.name "Enter your username"
+      prompt_for_git_config user.email "Enter your email"
+      git config --global core.excludesfile "$HOME/.gitignore_global"
+    fi
+}
+
+main () {
+  echo "Setting up your Mac..."
+  install_or_update_homebrew
+  install_brewfile
+  install_oh_my_zsh
+  install_oh_my_zsh_plugins
+  setup_neovim
+  configure_git
+  echo "Completed Mac set up!"
+}
+
+if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+    if [[ "debug" = $1 ]]; then
+        DEBUG=1
+    else
+        DEBUG=0
+    fi
+
+    main "$@"
+fi
