@@ -20,3 +20,6 @@ alias grss='git restore --staged'
 
 # Neovim aliases
 alias nv='nvim'
+
+# Python
+alias python='python3'
