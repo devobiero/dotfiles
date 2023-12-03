@@ -33,6 +33,9 @@ brew "nvm"
 # Code formatters
 brew "black"
 
+# Code linters
+brew "pylint"
+
 # Shell
 cask "iterm2"
 brew "fzf"
@@ -52,3 +55,4 @@ cask "slack"
 cask "spotify"
 cask "visual-studio-code"
 cask "zoom"
+cask "obsidian"
