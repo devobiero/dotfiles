@@ -30,6 +30,9 @@ brew "pyenv"
 brew "yarn"
 brew "nvm"
 
+# Code formatters
+brew "black"
+
 # Shell
 cask "iterm2"
 brew "fzf"
