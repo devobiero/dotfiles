@@ -18,6 +18,7 @@ brew "mas"
 brew "rsync"
 brew "wget"
 brew "docker"
+brew "docker-compose"
 
 # Fonts
 cask "font-meslo-lg-nerd-font"  # Used for vim-devicons plugin
@@ -56,3 +57,4 @@ cask "spotify"
 cask "visual-studio-code"
 cask "zoom"
 cask "obsidian"
+cask "postico"
