@@ -17,8 +17,16 @@ brew "grep"
 brew "mas"
 brew "rsync"
 brew "wget"
+
+# Docker / Kubernetes
 brew "docker"
 brew "docker-compose"
+brew "kubectl"
+brew "colima"
+brew "docker-Buildx"
+
+# Cloud CLI tools
+brew "azure-cli"
 
 # Fonts
 cask "font-meslo-lg-nerd-font"  # Used for vim-devicons plugin
