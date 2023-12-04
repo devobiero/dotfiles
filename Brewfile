@@ -19,10 +19,7 @@ brew "rsync"
 brew "wget"
 
 # Docker / Kubernetes
-brew "docker"
-brew "docker-compose"
 brew "kubectl"
-brew "colima"
 brew "docker-Buildx"
 
 # Cloud CLI tools
