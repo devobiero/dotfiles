@@ -60,3 +60,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 eval $(thefuck --alias)
+
+# PATH to psql, pg_dump and pg_restore
+export PATH="/usr/local/opt/libpq/bin:$PATH"

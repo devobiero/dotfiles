@@ -17,6 +17,7 @@ brew "grep"
 brew "mas"
 brew "rsync"
 brew "wget"
+brew "libpq"
 
 # Docker / Kubernetes
 brew "kubectl"
