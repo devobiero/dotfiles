@@ -5,7 +5,6 @@ cask_args appdir: "/Applications"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 
 # System set up
 brew "bat"
@@ -27,8 +26,9 @@ brew "docker-Buildx"
 brew "azure-cli"
 
 # Fonts
-cask "font-meslo-lg-nerd-font"  # Used for vim-devicons plugin
 cask "font-jetbrains-mono-nerd-font"
+cask "font-jetbrains-mono"
+cask "font-iosevka"
 
 # Programming languages / Development
 brew "mysql"
