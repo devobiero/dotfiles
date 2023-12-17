@@ -16,7 +16,7 @@ export ZSH_CUSTOM="$ZSH/custom"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Enable tab completion for Poetry
 # https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
