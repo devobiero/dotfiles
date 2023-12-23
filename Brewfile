@@ -28,7 +28,6 @@ brew "azure-cli"
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
 cask "font-jetbrains-mono"
-cask "font-iosevka"
 
 # Programming languages / Development
 brew "mysql"
@@ -36,6 +35,7 @@ brew "node"
 brew "pyenv"
 brew "yarn"
 brew "nvm"
+brew "pipenv"
 
 # Code formatters
 brew "black"
