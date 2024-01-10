@@ -37,6 +37,7 @@ brew "pyenv"
 brew "yarn"
 brew "nvm"
 brew "pipenv"
+brew "rustup-init"
 
 # Code formatters
 brew "black"
