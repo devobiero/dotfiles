@@ -24,6 +24,7 @@ brew "docker-Buildx"
 
 # Cloud CLI tools
 brew "azure-cli"
+brew "argocd"
 
 # Fonts
 cask "font-jetbrains-mono-nerd-font"
