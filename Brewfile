@@ -38,6 +38,7 @@ brew "yarn"
 brew "nvm"
 brew "pipenv"
 brew "rustup-init"
+brew "java11"
 
 # Code formatters
 brew "black"
