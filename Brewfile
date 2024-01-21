@@ -17,10 +17,13 @@ brew "mas"
 brew "rsync"
 brew "wget"
 brew "libpq"
+brew "graphviz"
 
 # Docker / Kubernetes
 brew "kubectl"
 brew "docker-Buildx"
+brew "helm"
+
 
 # Cloud CLI tools
 brew "azure-cli"
