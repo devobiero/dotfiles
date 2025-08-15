@@ -1,11 +1,6 @@
 # Set global configuration arguments
 cask_args appdir: "/Applications"
 
-# Taps
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/bundle"
-
 # System set up
 brew "bat"
 brew "colordiff"
@@ -41,7 +36,7 @@ brew "yarn"
 brew "nvm"
 brew "pipenv"
 brew "rustup-init"
-brew "java11"
+brew "openjdk@21"
 
 # Code formatters
 brew "black"
@@ -54,21 +49,11 @@ cask "iterm2"
 brew "fzf"
 brew "luajit", args: ['HEAD']
 brew "luarocks"
-brew "neovim", args: ['HEAD']
 brew "ripgrep"
-brew "thefuck"
-brew "tmux"
 brew "zsh"
 
 # Install applications
-cask "google-chrome"
-cask "notion"
 cask "rectangle"
-cask "slack"
-cask "spotify"
 cask "visual-studio-code"
-cask "zed"
-cask "zoom"
 cask "obsidian"
 cask "postico"
-cask "insomnia"
